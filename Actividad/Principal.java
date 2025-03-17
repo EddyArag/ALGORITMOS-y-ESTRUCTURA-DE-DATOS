@@ -37,15 +37,19 @@ public class Principal {
 
         System.out.println(rect1);
         System.out.println(rect2);
-        String relacion = Verificador.verificarRelacion(rect1, rect2);
-        System.out.println(relacion);
 
-        if (relacion.equals("Los rectángulos A y B se sobreponen.")) {
+        // Evaluar las relaciones con los métodos booleanos
+        if (Verificador.esSobrePos(rect1, rect2)) {
+            System.out.println("Los rectángulos A y B se sobreponen.");
             Rectangulo interseccion = rectanguloSobre(rect1, rect2);
             if (interseccion != null) {
                 System.out.println("Área de sobreposición: " + interseccion.calcularArea());
             }
-        }
+        } else if (Verificador.esJunto(rect1, rect2)) {
+            System.out.println("Los rectángulos A y B están juntos.");
+            } else {
+                System.out.println("Los rectángulos A y B son disjuntos.");
+            }
 
         scanner.close();
     }
