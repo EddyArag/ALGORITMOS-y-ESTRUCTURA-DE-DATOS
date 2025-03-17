@@ -7,7 +7,7 @@ public class Principal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ContainerRect contenedor = new ContainerRect(2);
+        ContainerRect contenedor = new ContainerRect();
 
         System.out.println("Ingrese la coordenada x de la primera esquina del 1er rectángulo:");
         double x1 = scanner.nextDouble();
