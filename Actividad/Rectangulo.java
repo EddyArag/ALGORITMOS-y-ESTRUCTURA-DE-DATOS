@@ -1,4 +1,4 @@
-package Actividad;
+
 
 // Clase que representa un rectángulo definido por dos coordenadas
 class Rectangulo {
