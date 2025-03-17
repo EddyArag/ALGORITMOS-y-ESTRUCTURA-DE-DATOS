@@ -1,5 +1,3 @@
-package Actividad;
-
 import java.awt.*;
 import javax.swing.*;
 import java.util.Scanner;
@@ -17,7 +15,7 @@ public class Principal extends JPanel {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ContainerRect contenedor = new ContainerRect();
+        ContainerRect contenedor = new ContainerRect(3);
 
         System.out.println("Ingrese la coordenada x de la primera esquina del 1er rectángulo:");
         double x1 = scanner.nextDouble();
@@ -47,15 +45,20 @@ public class Principal extends JPanel {
 
         System.out.println(rect1);
         System.out.println(rect2);
-        boolean  relacion = Verificador.SobrePuestos(rect1, rect2);
-        System.out.println(relacion);
 
-        if (relacion) {
+        // Evaluar las relaciones con los métodos booleanos
+        if (Verificador.SobrePuestos(rect1, rect2)) {
+            System.out.println("Los rectángulos A y B se sobreponen.");
             Rectangulo interseccion = rectanguloSobre(rect1, rect2);
             if (interseccion != null) {
                 System.out.println("Área de sobreposición: " + interseccion.calcularArea());
             }
+        } else if (Verificador.esJuntos(rect1, rect2)) {
+            System.out.println("Los rectángulos A y B están juntos.");
+        } else {
+            System.out.println("Los rectángulos A y B son disjuntos.");
         }
+
         // Crear ventana con el componente gráfico
         JFrame ventana = new JFrame("Dibujo de Rectángulos");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,11 +69,11 @@ public class Principal extends JPanel {
         ventana.add(panel);
         ventana.setVisible(true);
 
-
         scanner.close();
     }
 
-    // Método para calcular la intersección entre dos rectángulos
+    // Método de clase que calcula el rectángulo de sobreposición entre dos
+    // rectángulos
     public static Rectangulo rectanguloSobre(Rectangulo a, Rectangulo b) {
         double x1 = Math.max(a.getEsquina1().getX(), b.getEsquina1().getX());
         double y1 = Math.max(a.getEsquina1().getY(), b.getEsquina1().getY());
@@ -127,3 +130,4 @@ public class Principal extends JPanel {
     }
 
 }
+
