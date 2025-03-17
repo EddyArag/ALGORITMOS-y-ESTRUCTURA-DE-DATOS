@@ -29,7 +29,7 @@ class ContainerRect {
         StringBuilder sb = new StringBuilder();
         sb.append("Rectángulo\tCoordenadas\tDistancia\tÁrea\n");
         for (int i = 0; i < numRec; i++) {
-            sb.append((i + 1) + "\t" + "\t" + String.format("%.3f", distancias[i]) + "\t" + String.format("%.2f", areas[i]) + "\n");
+            sb.append((i + 1) + "\t" + rectangulos[i] + "\t" + String.format("%.3f", distancias[i]) + "\t" + String.format("%.2f", areas[i]) + "\n");
         }
         return sb.toString();
     }
