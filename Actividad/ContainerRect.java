@@ -14,14 +14,10 @@ class ContainerRect {
     }
 
     public void addRectangulo(Rectangulo r) {
-        if (numRec < 2) {
-            rectangulos[numRec] = r;
-            distancias[numRec] = r.getEsquina1().distancia(r.getEsquina2());
-            areas[numRec] = r.calcularArea();
-            numRec++;
-        } else {
-            System.out.println("Solo se pueden almacenar dos rectangulos");
-        }
+        rectangulos[numRec] = r;
+        distancias[numRec] = r.getEsquina1().distancia(r.getEsquina2());
+        areas[numRec] = r.calcularArea();
+        numRec++;
     }
 
     @Override
