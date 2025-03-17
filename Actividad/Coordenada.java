@@ -1,5 +1,3 @@
-package Actividad;
-
 // Clase que representa una coordenada en el plano cartesiano
 class Coordenada {
     private double x;
