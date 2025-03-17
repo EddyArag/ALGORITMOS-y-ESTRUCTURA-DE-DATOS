@@ -3,14 +3,14 @@ class ContainerRect {
     private Rectangulo[] rectangulos;
     private double[] distancias;
     private double[] areas;
-    private int n;
-    private static int numRec = 0;
+    private int numRec;
 
     public ContainerRect(int capacidad) {
         this.n = capacidad;
-        this.rectangulos = new Rectangulo[n];
-        this.distancias = new double[n];
-        this.areas = new double[n];
+        this.rectangulos = new Rectangulo[2];
+        this.distancias = new double[2];
+        this.areas = new double[2];
+        this.numRec = 0;
     }
 
     public void addRectangulo(Rectangulo r) {
@@ -20,7 +20,7 @@ class ContainerRect {
             areas[numRec] = r.calcularArea();
             numRec++;
         } else {
-            System.out.println("No es posible guardar más rectángulos.");
+            System.out.println("Solo se pueden almacenar dos rectángulo");
         }
     }
 
