@@ -7,6 +7,8 @@ public class Principal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        ContainerRect contenedor = new ContainerRect(2);
+
         System.out.println("Ingrese la coordenada x de la primera esquina del 1er rectángulo:");
         double x1 = scanner.nextDouble();
         System.out.println("Ingrese la coordenada y de la primera esquina del 1er rectángulo:");
@@ -26,6 +28,12 @@ public class Principal {
         System.out.println("Ingrese la coordenada y de la segunda esquina del 2do rectángulo:");
         double y4 = scanner.nextDouble();
         Rectangulo rect2 = new Rectangulo(new Coordenada(x3, y3), new Coordenada(x4, y4));
+
+        contenedor.addRectangulo(rect1);
+        contenedor.addRectangulo(rect2);
+
+        System.out.println("\n Contenedor:");
+        System.out.println(contenedor);
 
         System.out.println(rect1);
         System.out.println(rect2);
